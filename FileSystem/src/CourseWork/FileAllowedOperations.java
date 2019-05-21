@@ -1,5 +1,5 @@
 package CourseWork;
 
-public interface DocumentFormat {
+public interface FileAllowedOperations {
     String getDescription();
 }
