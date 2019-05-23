@@ -1,6 +1,6 @@
 package CourseWork;
 
-public class ThreadSafeLazyLoadedTxtDocumentFactory implements FileFactory {
+public class ThreadSafeLazyLoadedTxtDocumentFactory implements FileFactory,Cloneable {
 
 
 
@@ -29,5 +29,10 @@ public class ThreadSafeLazyLoadedTxtDocumentFactory implements FileFactory {
     public FileAllowedOperations createFileAllowedOperations() {
 
         return new TxtAllowedOperations();
+    }
+
+    @Override
+    public ThreadSafeLazyLoadedTxtDocumentFactory clone() throws CloneNotSupportedException{
+        return new ThreadSafeLazyLoadedTxtDocumentFactory();
     }
 }

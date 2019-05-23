@@ -1,6 +1,6 @@
 package CourseWork;
 
-public class ThreadSafeLazyLoadedPngFileFactory implements FileFactory {
+public class ThreadSafeLazyLoadedPngFileFactory implements FileFactory,Cloneable {
 
     private static ThreadSafeLazyLoadedPngFileFactory instance;
 
@@ -28,5 +28,9 @@ public class ThreadSafeLazyLoadedPngFileFactory implements FileFactory {
     public FileAllowedOperations createFileAllowedOperations() {
 
         return new PngAllowedOperations();
+    }
+    @Override
+    public ThreadSafeLazyLoadedPngFileFactory clone() throws CloneNotSupportedException{
+        return new ThreadSafeLazyLoadedPngFileFactory();
     }
 }
